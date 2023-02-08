@@ -3,7 +3,8 @@ import { Button } from "antd";
 import "antd/dist/reset.css";
 import "./App.css";
 
-import SlateEditor from "./slate/SlateEditor";
+// import SlateEditor from "./slate/SlateEditor";
+import TagEditor from "./slate/TagEditor";
 
 const App: FC = () => (
   <div className="App">
@@ -13,11 +14,13 @@ const App: FC = () => (
         width: 800,
         height: 600,
         margin: "20px auto",
-        backgroundColor: "#f2f2f2",
+        backgroundColor: "#fafafa",
         padding: "10px",
       }}
     >
-      <SlateEditor />
+      <TagEditor />
+      {/* <hr />
+      <SlateEditor /> */}
     </div>
   </div>
 );

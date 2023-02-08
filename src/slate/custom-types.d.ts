@@ -100,8 +100,7 @@ type CustomElement =
   | TableRowElement
   | TableCellElement
   | TitleElement
-  | VideoElement
-  | { type: string; children: CustomText[] };
+  | VideoElement;
 
 export type CustomText = {
   bold?: boolean;
