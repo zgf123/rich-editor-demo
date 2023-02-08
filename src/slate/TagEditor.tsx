@@ -292,7 +292,7 @@ const initialValue: Descendant[] = [
       { text: "Try mentioning characters, like " },
       {
         type: "mention",
-        character: "R2-D2",
+        character: "R2-D2111",
         children: [{ text: "", bold: true }],
       },
       { text: " or " },
