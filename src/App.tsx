@@ -4,7 +4,9 @@ import "antd/dist/reset.css";
 import "./App.css";
 
 // import SlateEditor from "./slate/SlateEditor";
-import TagEditor from "./slate/TagEditor";
+// import TagEditor from "./slate/TagEditor";
+// import ParseHtml from "./slate/ParseHtml";
+import RichText from "./slate/RichText";
 
 const App: FC = () => (
   <div className="App">
@@ -18,9 +20,10 @@ const App: FC = () => (
         padding: "10px",
       }}
     >
-      <TagEditor />
-      {/* <hr />
-      <SlateEditor /> */}
+      <RichText />
+      {/* <ParseHtml /> */}
+      {/* <TagEditor /> */}
+      {/* <SlateEditor /> */}
     </div>
   </div>
 );

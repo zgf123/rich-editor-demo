@@ -111,6 +111,7 @@ export type CustomText = {
 };
 
 export type EmptyText = {
+  bold?: boolean;
   text: string;
 };
 

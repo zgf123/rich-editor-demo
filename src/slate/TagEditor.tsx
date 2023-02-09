@@ -15,6 +15,7 @@ import {
   withReact,
   useSelected,
   useFocused,
+  useSlateStatic,
 } from "slate-react";
 
 type CustomText = {
@@ -36,7 +37,7 @@ const Portal = ({ children }: any) => {
     : null;
 };
 
-const MentionExample = () => {
+const TagEditor = () => {
   const ref = useRef<HTMLDivElement | null>();
   const [target, setTarget] = useState<Range | undefined>();
   const [index, setIndex] = useState(0);
@@ -97,7 +98,7 @@ const MentionExample = () => {
     <Slate
       editor={editor}
       value={initialValue}
-      onChange={() => {
+      onChange={(value) => {
         const { selection } = editor;
 
         if (selection && Range.isCollapsed(selection)) {
@@ -119,7 +120,6 @@ const MentionExample = () => {
             return;
           }
         }
-
         setTarget(undefined);
       }}
     >
@@ -227,6 +227,7 @@ const Element = (props: any) => {
 const Mention = ({ attributes, children, element }: any) => {
   const selected = useSelected();
   const focused = useFocused();
+  const editor = useSlateStatic();
   const style: React.CSSProperties = {
     padding: "3px 3px 2px",
     margin: "0 1px",
@@ -252,6 +253,14 @@ const Mention = ({ attributes, children, element }: any) => {
       style={style}
     >
       {children}@{element.character}
+      <span
+        style={{ cursor: "pointer", color: "red", padding: 2 }}
+        onClick={() => {
+          editor.deleteBackward("character");
+        }}
+      >
+        x
+      </span>
     </span>
   );
 };
@@ -712,4 +721,4 @@ const CHARACTERS = [
   "Zuckuss",
 ];
 
-export default MentionExample;
+export default TagEditor;
